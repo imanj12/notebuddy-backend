@@ -9,11 +9,11 @@ class Api::V1::TagsController < ApplicationController
    end
 
    def create
-      render json: Tag.create(tag)
+      render json: Tag.create(tag_params)
    end
 
    def update
-      Tag.find(params[:id]).update(tag)
+      Tag.find(params[:id]).update(tag_params)
       render json: Tag.find(params[:id])
    end
 
@@ -23,7 +23,7 @@ class Api::V1::TagsController < ApplicationController
 
    private
 
-   def tag
+   def tag_params
       params.require(:tag).permit(:name, :user_id)
    end
 

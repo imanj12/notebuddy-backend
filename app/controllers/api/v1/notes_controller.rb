@@ -9,11 +9,11 @@ class Api::V1::NotesController < ApplicationController
    end
 
    def create
-      render json: Note.create(note)
+      render json: Note.create(note_params)
    end
 
    def update
-      Note.find(params[:id]).update(note)
+      Note.find(params[:id]).update(note_params)
       render json: Note.find(params[:id])
    end
 
@@ -23,7 +23,7 @@ class Api::V1::NotesController < ApplicationController
 
    private
 
-   def note
+   def note_params
       params.require(:note).permit(:title, :content, :user_id)
    end
 
