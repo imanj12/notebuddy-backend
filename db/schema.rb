@@ -22,18 +22,10 @@ ActiveRecord::Schema.define(version: 2019_01_12_204551) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "notebooks", force: :cascade do |t|
-    t.string "title"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "notes", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.integer "user_id"
-    t.integer "notebook_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
