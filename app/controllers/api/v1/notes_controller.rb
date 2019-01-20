@@ -9,22 +9,13 @@ class Api::V1::NotesController < ApplicationController
    end
 
    def create
-      # @note = Note.new(title: params[:title], content: params[:content], user_id: params[:user_id])
-      # params[:tags].each do |tag|
-      #    @tag = Tag.find_or_create_by_name(tag[:tag])
-      #    @note.tags << @tag
-      # end
-      # @note.save
-      # render json: @note
       render json: Note.create(note_params)
    end
 
    def update
       @note = Note.find(params[:id])
       @note.note_tags.destroy_all
-      # @note.save
       @note.update(note_params)
-      # Note.find(params[:id]).update(note_params)
       render json: Note.find(params[:id])
    end
 

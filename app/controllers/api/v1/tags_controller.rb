@@ -9,12 +9,17 @@ class Api::V1::TagsController < ApplicationController
    end
 
    def create
-      render json: Tag.create(tag_params)
+      @tag = Tag.create(tag_params)
+      if @tag.valid?
+         render json: TagSerializer.new(@tag)
+      else
+         render json: {message: 'Tag creation failed', errors: @tag.errors}
+      end
+      # render json: Tag.create(tag_params)
    end
 
    def update
-      Tag.find(params[:id]).update(tag_params)
-      render json: Tag.find(params[:id])
+      render Tag.find(params[:id]).update(tag_params)
    end
 
    def destroy

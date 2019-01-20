@@ -20,7 +20,7 @@ Note.create(title: 'Family Birthdays', content: '<p>all birthdays here</p>', use
 
 NoteTag.create(tag_id: 1, note_id: 1)
 NoteTag.create(tag_id: 2, note_id: 2)
-NoteTag.create(tag_id: 3, note_id: 3)
+NoteTag.create(tag_id: 4, note_id: 3)
 NoteTag.create(tag_id: 4, note_id: 4)
 
 
