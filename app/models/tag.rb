@@ -5,7 +5,7 @@ class Tag < ApplicationRecord
 
    validates :name, uniqueness: true
 
-   # runs every time a note is saved, destroying any tags without notes
+   # runs every time a note is saved or destroyed, destroying any tags without notes
    def self.destroy_noteless_tags
       self.all.each do |tag|
          if tag.note_tags.length == 0
@@ -13,4 +13,5 @@ class Tag < ApplicationRecord
          end
       end
    end
+
 end

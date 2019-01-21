@@ -5,8 +5,9 @@ class Note < ApplicationRecord
 
    accepts_nested_attributes_for :note_tags
 
-   # destroy a tag if it has no note_tags
+   # destroy a tag if it has no notes (note_tags)
    after_save :destroy_noteless_tags
+   after_destroy :destroy_noteless_tags
 
    private
 
