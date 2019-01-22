@@ -1,4 +1,6 @@
 class NoteTag < ApplicationRecord
+   # attributes: note_id, tag_id
+
    belongs_to :note
    belongs_to :tag
 

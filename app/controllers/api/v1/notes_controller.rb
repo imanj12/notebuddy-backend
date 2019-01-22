@@ -26,12 +26,7 @@ class Api::V1::NotesController < ApplicationController
    private
 
    def note_params
-      # params.require(:note).permit(:title, :content, :user_id, tags: [])
       params.require(:note).permit(:title, :content, :user_id, note_tags_attributes: [:tag_id])
-      # params.require(:note).permit(:title, :content, :user_id).tap do |whitelisted|
-      #    whitelisted[:tags] = params[:tags]
-      # end
-      # params.require(:note).permit(:title, :content, :user_id, note_tags_attributes: [tag_attributes: [:name]])
    end
 
 end
