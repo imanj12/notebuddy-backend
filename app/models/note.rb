@@ -16,9 +16,9 @@ class Note < ApplicationRecord
    private
    
       def auto_destroy_noteless_tags
-         @user = self.user
+         user = self.user
          yield
-         @user.tags.each do |tag|
+         user.tags.each do |tag|
             if tag.note_tags.length == 0
                tag.destroy
             end
