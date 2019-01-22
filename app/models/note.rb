@@ -10,13 +10,19 @@ class Note < ApplicationRecord
    accepts_nested_attributes_for :note_tags
 
    # destroy a tag if it has no notes (note_tags)
-   after_save :destroy_noteless_tags
-   after_destroy :destroy_noteless_tags
+   around_save :auto_destroy_noteless_tags
+   around_destroy :auto_destroy_noteless_tags
 
    private
-
-      def destroy_noteless_tags
-         Tag.destroy_noteless_tags()
+   
+      def auto_destroy_noteless_tags
+         @user = self.user
+         yield
+         @user.tags.each do |tag|
+            if tag.note_tags.length == 0
+               tag.destroy
+            end
+         end
       end
 
 end
