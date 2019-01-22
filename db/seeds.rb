@@ -8,10 +8,10 @@
 
 User.create(username: 'iman', password: 'iman', password_confirmation: 'iman')
 
-Note.create(title: 'Saturday Party', content: '<p>Party stuff</p>', user_id: 1)
-Note.create(title: 'To-do List', content: '<p>Stuff to do</p>', user_id: 1)
-Note.create(title: 'Grocery List', content: '<p>shopping list here</p>', user_id: 1)
-Note.create(title: 'Family Birthdays', content: '<p>all birthdays here</p>', user_id: 1)
+Note.create(title: 'Saturday Party', content: '<p>Party stuff</p>', user_id: 1, location: '')
+Note.create(title: 'To-do List', content: '<p>Stuff to do</p>', user_id: 1, location: '')
+Note.create(title: 'Grocery List', content: '<p>shopping list here</p>', user_id: 1, location: '')
+Note.create(title: 'Family Birthdays', content: '<p>all birthdays here</p>', user_id: 1, location: '')
 
 Tag.create(name: 'social', user_id: 1)
 Tag.create(name: 'work', user_id: 1)
