@@ -5,7 +5,7 @@ class Note < ApplicationRecord
    has_many :note_tags, dependent: :destroy
    has_many :tags, through: :note_tags
 
-   validates :title, presence: { message: 'Note must have a title'}
+   validates :title, presence: true
 
    accepts_nested_attributes_for :note_tags
 
