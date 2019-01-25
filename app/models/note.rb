@@ -17,6 +17,7 @@ class Note < ApplicationRecord
    
       def auto_destroy_noteless_tags
          user = self.user
+         # add tags to user association
          yield
          user.tags.each do |tag|
             if tag.note_tags.length == 0
