@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username: 'iman', password: 'iman', password_confirmation: 'iman')
+User.create(username: 'example@example.com', password: 'example', password_confirmation: 'example')
 
 Note.create(title: 'Saturday Party', content: '<p>Party stuff</p>', user_id: 1, location: '')
 Note.create(title: 'To-do List', content: '<p>Stuff to do</p>', user_id: 1, location: '')
