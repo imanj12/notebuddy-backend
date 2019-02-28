@@ -1,24 +1,17 @@
-# README
+# Scribe
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Scribe (formerly NoteBuddy) use a React [frontend](https://github.com/imanj12/notebuddy-frontend) and a Rails backend.
 
-Things you may want to cover:
+Users can create a new note, edit, and tag the note. Note editing is done using a rich text editor. NoteBuddy supports searching and viewing notes by tag.
 
-* Ruby version
+## Details
 
-* System dependencies
+This is a straightforward Rails API backend using a PostgreSQL database. To set it up for yourself, simply create the database and run the migrations.
 
-* Configuration
+The model relationships are as follows:
 
-* Database creation
+![Scribe models](./storage/scribe_models.png)
 
-* Database initialization
+## JSON Web Tokens
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+User authentication is done using JSON Web Tokens. A JWT secret must be provided as a local environment variable with the name `JWTSECRET` for the current controller configurations to work.
