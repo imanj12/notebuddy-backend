@@ -6,11 +6,11 @@ Users can create a new note, edit, and tag the note. Note editing is done using 
 
 ## Details
 
-This is a straightforward Rails API backend using a PostgreSQL database. To set it up for yourself, simply create the database and run the migrations.
+This is a straightforward Rails API backend using a PostgreSQL database. To set it up, simply create the database and run the migrations.
 
 The model relationships are as follows:
 
-![Scribe models](storage/scribe_models.png)
+![Scribe Models](./storage/scribe_models.png?raw=true "Scribe Models")
 
 ## JSON Web Tokens
 
