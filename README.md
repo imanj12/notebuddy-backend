@@ -10,7 +10,7 @@ This is a straightforward Rails API backend using a PostgreSQL database. To set 
 
 The model relationships are as follows:
 
-![Scribe models](./storage/scribe_models.png)
+![Scribe models](storage/scribe_models.png)
 
 ## JSON Web Tokens
 
